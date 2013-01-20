@@ -27,6 +27,6 @@ if __name__ == '__main__':
         handlers=[(r'/', IndexHandler), (r'/poem', PoemPageHandler)],
         template_path=os.path.join(os.path.dirname(__file__), "templates")
     )
-    http_server = tornado.httpserver.HTTPServer()
+    http_server = tornado.httpserver.HTTPServer(app)
     http_server.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()
